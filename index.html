@@ -1,1 +1,1346 @@
-TES SITENEXS 123
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitenexs — Solusi Digital & Software UMKM Indonesia</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Sitenexs membantu UMKM naik kelas dengan jasa pembuatan website profesional, sistem presensi karyawan online, dan aplikasi kasir/pos kustom.">
+    <meta name="keywords" content="Sitenexs, Software UMKM, Buat Website UMKM, Sistem Presensi Online, Aplikasi Kasir POS, Solusi Digital Usaha">
+    <meta name="author" content="Sitenexs">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sitenexs.com/">
+    <meta property="og:title" content="Sitenexs — Digitalisasi & Software Praktis untuk UMKM">
+    <meta property="og:description" content="Tingkatkan omzet dan efisiensi usaha Anda dengan Website Profesional, Sistem Presensi Karyawan, dan Aplikasi Kasir.">
+    <meta property="og:image" content="https://sitenexs.com/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* === CSS VARIABLES === */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #10b981;
+            --bg-body: #ffffff;
+            --bg-card: #ffffff;
+            --bg-alt: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            
+            /* Enhanced Border Tokens */
+            --border-subtle: #cbd5e1;
+            --border-medium: #94a3b8;
+            --border-accent: #3b82f6;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+            
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* === UTILITIES & ANIMATION === */
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: var(--transition);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-sm {
+            padding: 0.55rem 1.15rem;
+            font-size: 0.825rem;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary-dark);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+        }
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-main);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-secondary:hover {
+            background-color: var(--bg-alt);
+            border-color: var(--border-medium);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .btn-block { width: 100%; }
+
+        /* Headers */
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3.5rem auto;
+        }
+        .section-subtitle {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Cards */
+        .custom-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .custom-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-accent);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.15), var(--shadow-md);
+        }
+
+        /* === NAVBAR === */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+        .logo-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-img {
+            height: 36px;
+            width: auto;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2px;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Auth Buttons Container */
+        .nav-auth-btns {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-main);
+            padding: 0.5rem 0.75rem;
+            transition: var(--transition);
+        }
+        .mobile-toggle:hover {
+            border-color: var(--border-medium);
+            background-color: var(--bg-alt);
+        }
+
+        /* Mobile Menu Dropdown */
+        #mobile-menu {
+            display: none;
+            background-color: var(--bg-card);
+            border-bottom: 2px solid var(--border-subtle);
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+        #mobile-menu a.nav-item {
+            display: block;
+            padding: 0.75rem 0;
+            font-weight: 600;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        #mobile-menu a.nav-item:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Responsif Tombol Auth HP */
+        .mobile-auth-wrapper {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .mobile-auth-wrapper .btn {
+            flex: 1;
+            padding: 0.7rem 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            padding: 9.5rem 0 4.5rem 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 700;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 850px;
+            margin: 0 auto 1.25rem auto;
+            letter-spacing: -0.025em;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Mockup Preview */
+        .mockup-wrapper {
+            margin-top: 3.5rem;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.6rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+        .mockup-container {
+            background-color: #ffffff;
+            border-radius: calc(var(--radius-lg) - 0.25rem);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+        .mockup-header {
+            height: 40px;
+            background-color: #f1f5f9;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+        .mockup-url { 
+            font-size: 0.75rem; 
+            color: var(--text-muted); 
+            font-family: monospace; 
+            margin-left: 0.5rem; 
+            background: #ffffff;
+            padding: 0.2rem 0.75rem;
+            border-radius: 0.25rem;
+            border: 1px solid var(--border-subtle);
+        }
+        .mockup-body {
+            padding: 2.5rem 2rem;
+            text-align: left;
+        }
+
+        /* Mockup Chart Styling */
+        .dashboard-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+        .mini-stat-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+        }
+        .mini-stat-title {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .mini-stat-value {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-top: 0.25rem;
+        }
+        .chart-container {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        .chart-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .chart-badge {
+            font-size: 0.725rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+        }
+        /* Custom CSS Bar Chart */
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 160px;
+            padding-top: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            gap: 1rem;
+        }
+        .bar-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        .bar-fill {
+            width: 100%;
+            max-width: 36px;
+            background: linear-gradient(to top, var(--primary), #60a5fa);
+            border-radius: 4px 4px 0 0;
+            transition: height 1s ease;
+        }
+        .bar-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* === STATS SECTION === */
+        .stats-section {
+            padding: 2.5rem 0;
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+        }
+        .stat-item {
+            padding: 0.5rem;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* === LAYANAN / SERVICES === */
+        .section-padding { padding: 5rem 0; }
+        .bg-alt {
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        /* Portfolio */
+        .portfolio-card { 
+            padding: 0; 
+            overflow: hidden; 
+        }
+        .portfolio-img {
+            height: 180px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .portfolio-body { padding: 1.25rem; }
+        .portfolio-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border: 1px solid var(--border-subtle);
+        }
+        .pricing-popular {
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-xl);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.25rem 0.85rem;
+            font-size: 0.68rem;
+            font-weight: 800;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+        }
+        .price {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            color: var(--text-main);
+        }
+        .price span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .feature-list {
+            list-style: none;
+            margin-bottom: 1.75rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-subtle);
+        }
+        .feature-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .feature-list li i { color: var(--accent); }
+
+        /* FAQ */
+        .faq-wrapper { max-width: 750px; margin: 0 auto; }
+        .faq-item {
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            background-color: var(--bg-card);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item:hover {
+            border-color: var(--border-medium);
+        }
+        .faq-btn {
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95rem;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-content {
+            display: none;
+            padding: 0 1.25rem 1.1rem 1.25rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 0.85rem;
+            background-color: #fafafa;
+        }
+
+        /* Form Kontak */
+        .form-container { max-width: 700px; margin: 0 auto; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            background-color: #ffffff;
+            font-size: 0.875rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        .form-control:hover {
+            border-color: var(--border-medium);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--border-accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            color: var(--text-muted);
+            padding: 3.5rem 0 1.75rem 0;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-title {
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.4rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .social-icons { display: flex; gap: 0.5rem; }
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        .social-btn:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Floating WA */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 992px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-title { font-size: 2.3rem; }
+            .dashboard-stats-row { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-auth-btns .btn { display: none; }
+            .mobile-toggle { display: block; }
+            
+            .grid-3 { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Sitenexs Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">Sitenexs</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#layanan">Layanan Solusi</a>
+                <a href="#keunggulan">Fitur UMKM</a>
+                <a href="#portofolio">Hasil Kerja</a>
+                <a href="#harga">Paket Harga</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <div class="nav-auth-btns">
+                <a href="login.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-right-to-bracket text-primary"></i> Sign In
+                </a>
+                <a href="register.html" class="btn btn-primary btn-sm">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+                <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Open Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu">
+            <a href="#layanan" class="nav-item">Layanan Solusi</a>
+            <a href="#keunggulan" class="nav-item">Fitur UMKM</a>
+            <a href="#portofolio" class="nav-item">Hasil Kerja</a>
+            <a href="#harga" class="nav-item">Paket Harga</a>
+            <a href="#faq" class="nav-item">FAQ</a>
+            
+            <div class="mobile-auth-wrapper">
+                <a href="login.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-right-to-bracket text-primary"></i> Sign In
+                </a>
+                <a href="register.html" class="btn btn-primary btn-sm">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero bg-grid-pattern">
+        <div class="container">
+            <div class="badge reveal">
+                <i class="fas fa-store text-primary"></i> Solusi Digital Praktis Khusus UMKM
+            </div>
+            
+            <h1 class="hero-title reveal">
+                Modernkan Usaha Anda dengan Website Profesional & Sistem Presensi Digital
+            </h1>
+            
+            <p class="hero-desc reveal">
+                Sitenexs membantu UMKM Indonesia memiliki website profil usaha, sistem absensi karyawan berbasis HP, dan aplikasi kasir modern yang gampang dipakai serta terjangkau.
+            </p>
+
+            <div class="hero-buttons reveal">
+                <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20mau%20tanya%20pembuatan%20website/sistem%20untuk%20UMKM." target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+                </a>
+                <a href="#layanan" class="btn btn-secondary">
+                    Lihat Layanan Solusi
+                </a>
+            </div>
+
+            <!-- Preview Dashboard Mockup (Grafik Saja) -->
+            <div class="mockup-wrapper reveal">
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                        <span class="mockup-url">https://dashboard.sitenexs.com/analitik</span>
+                    </div>
+                    <div class="mockup-body">
+                        <!-- Ringkasan Statistik Singkat -->
+                        <div class="dashboard-stats-row">
+                            <div class="mini-stat-card">
+                                <div class="mini-stat-title">Total Pendapatan Bulan Ini</div>
+                                <div class="mini-stat-value">Rp 14.850.000</div>
+                            </div>
+                            <div class="mini-stat-card">
+                                <div class="mini-stat-title">Transaksi Berhasil</div>
+                                <div class="mini-stat-value">342 Order</div>
+                            </div>
+                            <div class="mini-stat-card">
+                                <div class="mini-stat-title">Kehadiran Karyawan</div>
+                                <div class="mini-stat-value">98.5%</div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Grafik Batang (Bar Chart) -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <div class="chart-title"><i class="fas fa-chart-line text-primary"></i> Grafik Pertumbuhan Omzet & Performa Usaha</div>
+                                <span class="chart-badge">Tahun 2026</span>
+                            </div>
+                            <div class="bar-chart">
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 40%;"></div>
+                                    <span class="bar-label">Jan</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 55%;"></div>
+                                    <span class="bar-label">Feb</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 50%;"></div>
+                                    <span class="bar-label">Mar</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 70%;"></div>
+                                    <span class="bar-label">Apr</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 65%;"></div>
+                                    <span class="bar-label">Mei</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 85%;"></div>
+                                    <span class="bar-label">Jun</span>
+                                </div>
+                                <div class="bar-column">
+                                    <div class="bar-fill" style="height: 95%;"></div>
+                                    <span class="bar-label">Jul</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTIK / COUNTER -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
+                    <div class="stat-label">UMKM Terbantu</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="3">0</span>-7 Hari</div>
+                    <div class="stat-label">Pengerjaan Website</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
+                    <div class="stat-label">Akses via Smartphone</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Pendampingan Admin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN UTAMA -->
+    <section id="layanan" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">Layanan Unggulan</div>
+                <h2 class="section-title">Solusi Digital yang Paling Dibutuhkan UMKM</h2>
+                <p class="section-desc">Pilih solusi yang sesuai dengan kebutuhan dan skala bisnis Anda saat ini.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-globe"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Website & Toko Online UMKM</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Website resmi untuk profil bisnis, katalog produk lengkap, tombol order via WhatsApp, dan integrasi Google Maps.</p>
+                </div>
+
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-user-check"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Sistem Presensi Karyawan (GPS)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Aplikasi absensi HP pakai foto selfie & koordinat lokasi. Rekap laporan bulanan otomatis format Excel tanpa rekap manual.</p>
+                </div>
+
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-cash-register"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Aplikasi Kasir / POS Sederhana</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Pencatatan transaksi penjualan harian, cetak struk via bluetooth thermal printer, serta kontrol stok barang toko.</p>
+                </div>
+
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-qrcode"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Menu Digital / Brosur QR Code</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Sangat cocok untuk Resto, Kafe, dan Salon. Pelanggan tinggal scan QR Code di meja untuk melihat daftar menu interaktif.</p>
+                </div>
+
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Sistem Booking & Janji Temu</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Cocok untuk jasa barbershop, klinik, bengkel, dan persewaan. Memudahkan pelanggan mengatur jadwal kunjungan.</p>
+                </div>
+
+                <div class="custom-card custom-card-hover reveal">
+                    <div class="icon-box"><i class="fas fa-gears"></i></div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Pembuatan Website Untuk Bisnis</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Punya alur bisnis unik? Kami siap mendesain sistem internal sesuai dengan alur operasional khusus usaha Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR UNGULAN UNTUK UMKM -->
+    <section id="keunggulan" class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">Mengapa Sitenexs?</div>
+                <h2 class="section-title">Didesain Agar Mudah Ditangani Pemilik Usaha</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="custom-card reveal">
+                    <i class="fas fa-feather-pointed text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Sangat Mudah Digunakan</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Tampilan ringkas tanpa kerumitan teknis. Anda atau staf dapat langsung memakainya dalam hitungan menit.</p>
+                </div>
+
+                <div class="custom-card reveal">
+                    <i class="fas fa-mobile-screen text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Ramah HP / Smartphone</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Dapat diakses lancar lewat HP Android, iPhone, Laptop, maupun Tablet tanpa perlu beli perangkat mahal.</p>
+                </div>
+
+                <div class="custom-card reveal">
+                    <i class="fas fa-hand-holding-dollar text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Tanpa Biaya Tersembunyi</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Harga jelas dari awal. Bebas konsultasi dan termasuk garansi pendampingan dari tim teknis kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTOFOLIO / HASIL KERJA -->
+    <section id="portofolio" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">Portofolio</div>
+                <h2 class="section-title">Contoh Solusi yang Telah Kami Buat</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="custom-card portfolio-card custom-card-hover reveal">
+                    <div class="portfolio-img">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-category">Kuliner & Resto</span>
+                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">Web Menu QR & Presensi Karyawan</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Sistem terpadu untuk jaringan rumah makan daerah dengan 20+ staf.</p>
+                    </div>
+                </div>
+
+                <div class="custom-card portfolio-card custom-card-hover reveal">
+                    <div class="portfolio-img">
+                        <i class="fas fa-store" style="color: #0284c7;"></i>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-category">Toko Retail</span>
+                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">Website Katalog & Kasir Whatsapp</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Toko kelontong modern dengan fitur checkout langsung terhubung ke Chat WA.</p>
+                    </div>
+                </div>
+
+                <div class="custom-card portfolio-card custom-card-hover reveal">
+                    <div class="portfolio-img">
+                        <i class="fas fa-scissors" style="color: #6366f1;"></i>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-category">Jasa Layanan</span>
+                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">System Booking Barbershop / Salon</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Aplikasi penjadwalan capster dan pencatatan komisi bulanan otomatis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARGA / PRICING -->
+    <section id="harga" class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">Paket Harga Ringan</div>
+                <h2 class="section-title">Investasi Terjangkau untuk Pertumbuhan Usaha</h2>
+            </div>
+
+            <div class="grid-3">
+                <!-- Website Starter -->
+                <div class="custom-card pricing-card custom-card-hover reveal">
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">Website Profil UMKM</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Cocok untuk usaha baru agar tampil terpercaya.</p>
+                        <div class="price">Rp 750.000 <span>/ sekali bayar</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Domain .com / .my.id (1 Thn)</li>
+                            <li><i class="fas fa-check"></i> Halaman Profil & Katalog Produk</li>
+                            <li><i class="fas fa-check"></i> Tombol Order Langsung WA</li>
+                            <li><i class="fas fa-check"></i> Integrasi Lokasi Google Maps</li>
+                            <li><i class="fas fa-check"></i> Gratis Pemanduan Admin</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Website%20Profil%20UMKM." target="_blank" class="btn btn-secondary btn-block">Pilih Paket</a>
+                </div>
+
+                <!-- Sistem Presensi & Website (Popular) -->
+                <div class="custom-card pricing-card pricing-popular custom-card-hover reveal">
+                    <span class="popular-badge">Paling Banyak Dipilih</span>
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">Presensi + Website Pro</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Solusi operasional dan promosi lengkap.</p>
+                        <div class="price">Rp 1.850.000 <span>/ sistem usaha</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Fitur Website UMKM Lengkap</li>
+                            <li><i class="fas fa-check"></i> Sistem Presensi GPS & Selfie HP</li>
+                            <li><i class="fas fa-check"></i> Dashboard Kelola Karyawan</li>
+                            <li><i class="fas fa-check"></i> Laporan Absensi Export Excel</li>
+                            <li><i class="fas fa-check"></i> Pendampingan & Garansi 6 Bulan</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Presensi%20+%20Website%20Pro." target="_blank" class="btn btn-primary btn-block">Pilih Paket</a>
+                </div>
+
+                <!-- Custom Enterprise -->
+                <div class="custom-card pricing-card custom-card-hover reveal">
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">Sistem Kasir / Custom</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Untuk toko retail, resto, & multi-cabang.</p>
+                        <div class="price">Konsultasi <span>/ penyesuaian</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Software Kasir POS / Stok Barang</li>
+                            <li><i class="fas fa-check"></i> Cetak Struk Bluetooth / Thermal</li>
+                            <li><i class="fas fa-check"></i> Pengaturan Cabang & Karyawan</li>
+                            <li><i class="fas fa-check"></i> Desain Sistem Sesuai Alur Usaha</li>
+                            <li><i class="fas fa-check"></i> Support Teknis Prioritas</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20ingin%20konsultasi%20Sistem%20Custom/Kasir." target="_blank" class="btn btn-secondary btn-block">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">FAQ</div>
+                <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="faq-item reveal">
+                    <button class="faq-btn">
+                        <span>Apakah saya yang awam teknologi bisa mengoperasikannya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        Sangat bisa. Kami merancang semua sistem dengan tampilan yang sesederhana mungkin. Kami juga memberikan video panduan serta mendampingi Anda sampai paham.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-btn">
+                        <span>Bagaimana cara kerja Sistem Presensi Karyawan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        Karyawan cukup membuka link absensi dari HP mereka, mengambil foto selfie, dan sistem akan otomatis mencatat jam serta lokasi GPS mereka. Anda bisa mengunduh rekapannya kapan saja.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-btn">
+                        <span>Berapa lama proses pengerjaan pembuatan website?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        Untuk paket Website UMKM umum, pengerjaan memakan waktu sekitar 3 hingga 5 hari kerja setelah semua data produk dan foto usaha kami terima.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM KONTAK -->
+    <section id="kontak" class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-subtitle">Diskusi Gratis</div>
+                <h2 class="section-title">Tanyakan Kebutuhan Digital Usaha Anda</h2>
+                <p class="section-desc">Isi formulir di bawah ini atau langsung hubungi kami via WhatsApp.</p>
+            </div>
+
+            <div class="form-container">
+                <form id="contact-form" class="custom-card reveal">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nama Pemilik / Usaha</label>
+                            <input type="text" required placeholder="Contoh: Budi (Toko Berkah)" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>No. WhatsApp</label>
+                            <input type="tel" required placeholder="0812xxxxxxx" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Layanan yang Diminati</label>
+                        <select class="form-control">
+                            <option>Website Profil UMKM / Katalog</option>
+                            <option>Sistem Presensi Karyawan (GPS)</option>
+                            <option>Aplikasi Kasir / POS Toko</option>
+                            <option>Menu QR Code / Booking System</option>
+                            <option>Lainnya / Ingin Konsultasi Dulu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Catatan Singkat Kebutuhan</label>
+                        <textarea rows="3" placeholder="Ceritakan singkat jenis usaha Anda dan sistem yang diinginkan..." class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Kirim Pesan Konsultasi</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: 0.75rem;">
+                        <img src="logo.png" alt="Sitenexs Logo" class="logo-img" onerror="this.style.display='none'">
+                        <span class="logo-text">Sitenexs</span>
+                    </div>
+                    <p style="font-size: 0.8rem; line-height: 1.5; max-width: 280px;">Partner digitalisasi UMKM Indonesia. Solusi software praktis, terjangkau, dan mudah dipakai.</p>
+                </div>
+                <div>
+                    <div class="footer-title">Layanan</div>
+                    <ul class="footer-links">
+                        <li><a href="#layanan">Website UMKM</a></li>
+                        <li><a href="#layanan">Presensi GPS</a></li>
+                        <li><a href="#layanan">Aplikasi Kasir</a></li>
+                        <li><a href="#harga">Paket Harga</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Sosial Media</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-title">Kontak Kami</div>
+                    <p style="font-size: 0.8rem;"><i class="fas fa-envelope"></i> halo@sitenexs.com</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.3rem;"><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; text-align: center; font-size: 0.75rem;">
+                &copy; 2026 Sitenexs. Solusi Digital UMKM Indonesia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20ingin%20tanya%20seputar%20pembuatan%20website%20dan%20sistem%20presensi." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat WhatsApp"
+       class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Mobile Navigation Toggle & Auto-Close when Link Clicked
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavItems = document.querySelectorAll('#mobile-menu a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isDisplayed = mobileMenu.style.display === 'block';
+            mobileMenu.style.display = isDisplayed ? 'none' : 'block';
+        });
+
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        });
+
+        // 2. Scroll Reveal Effect
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 80) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // 3. Counter Animation
+        let countersStarted = false;
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 30;
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const counterSection = document.querySelector('.stats-section');
+            if (counterSection) {
+                const position = counterSection.getBoundingClientRect().top;
+                if (position < window.innerHeight && !countersStarted) {
+                    startCounters();
+                    countersStarted = true;
+                }
+            }
+        });
+
+        // 4. FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                const isOpen = content.style.display === 'block';
+                
+                content.style.display = isOpen ? 'none' : 'block';
+                icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+                icon.style.transition = 'transform 0.3s';
+            });
+        });
+
+        // 5. Form Kontak Handling
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Terima kasih! Tim Sitenexs akan menghubungi nomor WhatsApp Anda dalam waktu dekat.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
