@@ -53,9 +53,10 @@
             --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
             --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
             
-            --radius-md: 0.75rem;
-            --radius-lg: 1rem;
-            --radius-full: 9999px;
+            /* Radius Mix: Sebagian kotak, sebagian dibuat melingkar/pill */
+            --radius-md: 0.35rem;
+            --radius-lg: 0.75rem;
+            --radius-full: 9999px; /* Tombol dan badge dikembalikan menjadi bentuk pil/bulat */
             --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -68,13 +69,14 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 14px;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.5;
             overflow-x: hidden;
         }
 
@@ -88,9 +90,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
         }
 
         /* === UTILITIES & ANIMATION === */
@@ -106,7 +108,7 @@
 
         .reveal {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(20px);
             transition: var(--transition);
         }
         .reveal.active {
@@ -114,15 +116,15 @@
             transform: translateY(0);
         }
 
-        /* Buttons */
+        /* Buttons - Menggunakan --radius-full agar berbentuk pil/bulat ujungnya */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.75rem;
-            font-size: 0.9rem;
-            font-weight: 700;
+            gap: 0.4rem;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
             border-radius: var(--radius-full);
             transition: var(--transition);
             cursor: pointer;
@@ -131,20 +133,20 @@
             white-space: nowrap;
         }
         .btn-sm {
-            padding: 0.55rem 1.15rem;
-            font-size: 0.825rem;
+            padding: 0.4rem 0.95rem;
+            font-size: 0.78rem;
         }
         .btn-primary {
             background-color: var(--primary);
             color: #ffffff;
             border-color: var(--primary-dark);
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
         }
         .btn-primary:hover {
             background-color: var(--primary-dark);
             border-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         .btn-secondary {
             background-color: #ffffff;
@@ -155,7 +157,7 @@
         .btn-secondary:hover {
             background-color: var(--bg-alt);
             border-color: var(--border-medium);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         .btn-outline {
             background: transparent;
@@ -167,32 +169,32 @@
             border-color: var(--primary);
             color: var(--primary);
         }
-        .btn-block { width: 100%; }
+        .btn-block { width: 100%; border-radius: var(--radius-md); }
 
         /* Headers */
         .section-header {
             text-align: center;
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
         }
         .section-subtitle {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             color: var(--primary);
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         .section-title {
-            font-size: 2.1rem;
+            font-size: 1.75rem;
             font-weight: 800;
             letter-spacing: -0.02em;
             color: var(--text-main);
         }
         .section-desc {
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             color: var(--text-muted);
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
         }
 
         /* Cards */
@@ -200,14 +202,14 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
-            padding: 2rem;
+            padding: 1.5rem;
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
         }
         .custom-card-hover:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--border-accent);
-            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.15), var(--shadow-md);
+            box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.12), var(--shadow-md);
         }
 
         /* === NAVBAR === */
@@ -226,14 +228,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 76px;
+            height: 64px;
         }
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--text-main);
         }
         .logo-text {
@@ -243,27 +245,26 @@
             background-clip: text;
         }
         .logo-img {
-            height: 36px;
+            height: 30px;
             width: auto;
             border: 1px solid var(--border-subtle);
-            border-radius: 8px;
+            border-radius: var(--radius-full);
             padding: 2px;
             object-fit: contain;
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
-            font-size: 0.9rem;
+            gap: 1.5rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
         .nav-links a:hover { color: var(--primary); }
         
-        /* Auth Buttons Container */
         .nav-auth-btns {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
         .mobile-toggle {
@@ -271,10 +272,10 @@
             background: none;
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             color: var(--text-main);
-            padding: 0.5rem 0.75rem;
+            padding: 0.4rem 0.6rem;
             transition: var(--transition);
         }
         .mobile-toggle:hover {
@@ -282,17 +283,16 @@
             background-color: var(--bg-alt);
         }
 
-        /* Mobile Menu Dropdown */
         #mobile-menu {
             display: none;
             background-color: var(--bg-card);
             border-bottom: 2px solid var(--border-subtle);
-            padding: 1.25rem 1.5rem;
+            padding: 1rem 1.25rem;
             box-shadow: var(--shadow-lg);
         }
         #mobile-menu a.nav-item {
             display: block;
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
             font-weight: 600;
             color: var(--text-main);
             border-bottom: 1px solid var(--border-subtle);
@@ -301,67 +301,66 @@
             border-bottom: none;
         }
 
-        /* Responsif Tombol Auth HP */
         .mobile-auth-wrapper {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
+            gap: 0.5rem;
+            margin-top: 0.85rem;
+            padding-top: 0.85rem;
             border-top: 1px solid var(--border-subtle);
         }
         .mobile-auth-wrapper .btn {
             flex: 1;
-            padding: 0.7rem 0.5rem;
-            font-size: 0.85rem;
+            padding: 0.5rem 0.4rem;
+            font-size: 0.8rem;
         }
 
         /* === HERO SECTION === */
         .hero {
-            padding: 9.5rem 0 4.5rem 0;
+            padding: 8rem 0 3.5rem 0;
             text-align: center;
             background-color: #ffffff;
         }
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1.1rem;
+            gap: 0.4rem;
+            padding: 0.3rem 0.85rem;
             border-radius: var(--radius-full);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             background-color: var(--primary-light);
             color: var(--primary);
             border: 1px solid rgba(37, 99, 235, 0.3);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             box-shadow: var(--shadow-sm);
         }
         .hero-title {
-            font-size: 3rem;
+            font-size: 2.35rem;
             font-weight: 800;
-            line-height: 1.2;
-            max-width: 850px;
-            margin: 0 auto 1.25rem auto;
+            line-height: 1.25;
+            max-width: 750px;
+            margin: 0 auto 1rem auto;
             letter-spacing: -0.025em;
         }
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 2rem auto;
+            max-width: 580px;
+            margin: 0 auto 1.5rem auto;
         }
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         /* Mockup Preview */
         .mockup-wrapper {
-            margin-top: 3.5rem;
-            max-width: 850px;
+            margin-top: 2.5rem;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0.6rem;
+            padding: 0.4rem;
             background: var(--bg-alt);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
@@ -369,96 +368,94 @@
         }
         .mockup-container {
             background-color: #ffffff;
-            border-radius: calc(var(--radius-lg) - 0.25rem);
+            border-radius: calc(var(--radius-lg) - 0.15rem);
             overflow: hidden;
             border: 1px solid var(--border-subtle);
         }
         .mockup-header {
-            height: 40px;
+            height: 34px;
             background-color: #f1f5f9;
-            padding: 0 1rem;
+            padding: 0 0.85rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             border-bottom: 1px solid var(--border-subtle);
         }
-        .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
+        .dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
         .dot-red { background-color: #ef4444; }
         .dot-yellow { background-color: #f59e0b; }
         .dot-green { background-color: #10b981; }
         .mockup-url { 
-            font-size: 0.75rem; 
+            font-size: 0.7rem; 
             color: var(--text-muted); 
             font-family: monospace; 
-            margin-left: 0.5rem; 
+            margin-left: 0.4rem; 
             background: #ffffff;
-            padding: 0.2rem 0.75rem;
-            border-radius: 0.25rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-full);
             border: 1px solid var(--border-subtle);
         }
         .mockup-body {
-            padding: 2.5rem 2rem;
+            padding: 1.75rem 1.25rem;
             text-align: left;
         }
 
-        /* Mockup Chart Styling */
         .dashboard-stats-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.75rem;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
         }
         .mini-stat-card {
             background: var(--bg-alt);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            padding: 1rem;
+            padding: 0.75rem;
         }
         .mini-stat-title {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             font-weight: 600;
         }
         .mini-stat-value {
-            font-size: 1.15rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--text-main);
-            margin-top: 0.25rem;
+            margin-top: 0.2rem;
         }
         .chart-container {
             background: #ffffff;
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
-            padding: 1.25rem;
+            padding: 1rem;
         }
         .chart-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         .chart-title {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-main);
         }
         .chart-badge {
-            font-size: 0.725rem;
+            font-size: 0.68rem;
             background: var(--primary-light);
             color: var(--primary);
-            padding: 0.2rem 0.6rem;
+            padding: 0.15rem 0.5rem;
             border-radius: var(--radius-full);
             font-weight: 700;
         }
-        /* Custom CSS Bar Chart */
         .bar-chart {
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            height: 160px;
-            padding-top: 1rem;
+            height: 130px;
+            padding-top: 0.75rem;
             border-bottom: 1px solid var(--border-subtle);
-            gap: 1rem;
+            gap: 0.75rem;
         }
         .bar-column {
             flex: 1;
@@ -470,21 +467,21 @@
         }
         .bar-fill {
             width: 100%;
-            max-width: 36px;
+            max-width: 30px;
             background: linear-gradient(to top, var(--primary), #60a5fa);
-            border-radius: 4px 4px 0 0;
+            border-radius: var(--radius-full) var(--radius-full) 0 0;
             transition: height 1s ease;
         }
         .bar-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
             font-weight: 600;
         }
 
         /* === STATS SECTION === */
         .stats-section {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             background-color: var(--bg-alt);
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
@@ -492,25 +489,25 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
             text-align: center;
         }
         .stat-item {
-            padding: 0.5rem;
+            padding: 0.4rem;
         }
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.65rem;
             font-weight: 800;
             color: var(--primary);
         }
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--text-muted);
         }
 
         /* === LAYANAN / SERVICES === */
-        .section-padding { padding: 5rem 0; }
+        .section-padding { padding: 3.5rem 0; }
         .bg-alt {
             background-color: var(--bg-alt);
             border-top: 1px solid var(--border-subtle);
@@ -519,19 +516,20 @@
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.75rem;
+            gap: 1.25rem;
         }
+        /* Ikon dibuat bundar penuh */
         .icon-box {
             width: 48px;
             height: 48px;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-full);
             background-color: var(--primary-light);
             color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             border: 1px solid rgba(37, 99, 235, 0.2);
         }
 
@@ -541,18 +539,18 @@
             overflow: hidden; 
         }
         .portfolio-img {
-            height: 180px;
+            height: 140px;
             background-color: #f1f5f9;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             border-bottom: 1px solid var(--border-subtle);
         }
-        .portfolio-body { padding: 1.25rem; }
+        .portfolio-body { padding: 1rem; }
         .portfolio-category {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
@@ -572,52 +570,52 @@
         }
         .popular-badge {
             position: absolute;
-            top: -13px;
+            top: -11px;
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--primary);
             color: #fff;
-            padding: 0.25rem 0.85rem;
-            font-size: 0.68rem;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.62rem;
             font-weight: 800;
             border-radius: var(--radius-full);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
         }
         .price {
-            font-size: 1.85rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            margin: 1rem 0;
+            margin: 0.75rem 0;
             color: var(--text-main);
         }
         .price span {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 500;
             color: var(--text-muted);
         }
         .feature-list {
             list-style: none;
-            margin-bottom: 1.75rem;
-            padding-top: 1rem;
+            margin-bottom: 1.25rem;
+            padding-top: 0.75rem;
             border-top: 1px dashed var(--border-subtle);
         }
         .feature-list li {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
         .feature-list li i { color: var(--accent); }
 
         /* FAQ */
-        .faq-wrapper { max-width: 750px; margin: 0 auto; }
+        .faq-wrapper { max-width: 650px; margin: 0 auto; }
         .faq-item {
             border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            margin-bottom: 1rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 0.75rem;
             background-color: var(--bg-card);
             overflow: hidden;
             transition: var(--transition);
@@ -627,10 +625,10 @@
         }
         .faq-btn {
             width: 100%;
-            padding: 1.1rem 1.25rem;
+            padding: 0.85rem 1rem;
             text-align: left;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             background: none;
             border: none;
             color: var(--text-main);
@@ -641,36 +639,36 @@
         }
         .faq-content {
             display: none;
-            padding: 0 1.25rem 1.1rem 1.25rem;
-            font-size: 0.875rem;
+            padding: 0 1rem 0.85rem 1rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-subtle);
-            padding-top: 0.85rem;
+            padding-top: 0.7rem;
             background-color: #fafafa;
         }
 
         /* Form Kontak */
-        .form-container { max-width: 700px; margin: 0 auto; }
+        .form-container { max-width: 600px; margin: 0 auto; }
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.75rem;
         }
-        .form-group { margin-bottom: 1.25rem; }
+        .form-group { margin-bottom: 1rem; }
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             color: var(--text-main);
         }
         .form-control {
             width: 100%;
-            padding: 0.75rem 0.9rem;
+            padding: 0.6rem 0.75rem;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-subtle);
             background-color: #ffffff;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-main);
             transition: var(--transition);
         }
@@ -680,36 +678,37 @@
         .form-control:focus {
             outline: none;
             border-color: var(--border-accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
         }
 
         /* Footer */
         footer {
             background-color: #ffffff;
             color: var(--text-muted);
-            padding: 3.5rem 0 1.75rem 0;
+            padding: 2.5rem 0 1.25rem 0;
             border-top: 1px solid var(--border-subtle);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         .footer-title {
             color: var(--text-main);
             font-weight: 700;
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
         }
         .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.4rem; }
+        .footer-links li { margin-bottom: 0.35rem; }
         .footer-links a:hover { color: var(--primary); }
         .social-icons { display: flex; gap: 0.5rem; }
         .social-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-full);
             border: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
@@ -721,36 +720,94 @@
             background-color: var(--primary);
             color: #ffffff;
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
-        /* Floating WA */
-        .whatsapp-float {
+        /* Floating WA - Dipercantik agar tampak lebih nyata & hidup */
+        .whatsapp-float-container {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
+            bottom: 1.75rem;
+            right: 1.75rem;
             z-index: 999;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .whatsapp-tooltip {
+            background: #ffffff;
+            color: var(--text-main);
+            padding: 0.5rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-subtle);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .whatsapp-float-container:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .whatsapp-float {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            border: 2px solid #ffffff;
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
-            transition: var(--transition);
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
-        .whatsapp-float:hover { transform: scale(1.08); }
+
+        .whatsapp-float::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-full);
+            border: 2px solid #25d366;
+            opacity: 0.8;
+            animation: wa-pulse 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes wa-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            70% {
+                transform: scale(1.35);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.35);
+                opacity: 0;
+            }
+        }
+
+        .whatsapp-float:hover { 
+            transform: scale(1.08) translateY(-2px); 
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5), 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
 
         /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 992px) {
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-title { font-size: 2.3rem; }
+            .hero-title { font-size: 2rem; }
             .dashboard-stats-row { grid-template-columns: 1fr; }
         }
         
@@ -763,6 +820,8 @@
             .form-grid { grid-template-columns: 1fr; }
             .hero-buttons { flex-direction: column; }
             .footer-grid { grid-template-columns: 1fr; }
+            
+            .whatsapp-tooltip { display: none; } /* Sembunyikan tooltip pada layar kecil agar tidak memakan tempat */
         }
     </style>
 </head>
@@ -832,7 +891,7 @@
             </p>
 
             <div class="hero-buttons reveal">
-                <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20mau%20tanya%20pembuatan%20website/sistem%20untuk%20UMKM." target="_blank" class="btn btn-primary">
+                <a href="https://wa.me/6285177137899?text=Halo%20Sitenexs,%20saya%20mau%20tanya%20pembuatan%20website/sistem%20untuk%20UMKM." target="_blank" class="btn btn-primary">
                     <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
                 </a>
                 <a href="#layanan" class="btn btn-secondary">
@@ -840,7 +899,7 @@
                 </a>
             </div>
 
-            <!-- Preview Dashboard Mockup (Grafik Saja) -->
+            <!-- Preview Dashboard Mockup -->
             <div class="mockup-wrapper reveal">
                 <div class="mockup-container">
                     <div class="mockup-header">
@@ -850,7 +909,6 @@
                         <span class="mockup-url">https://dashboard.sitenexs.com/analitik</span>
                     </div>
                     <div class="mockup-body">
-                        <!-- Ringkasan Statistik Singkat -->
                         <div class="dashboard-stats-row">
                             <div class="mini-stat-card">
                                 <div class="mini-stat-title">Total Pendapatan Bulan Ini</div>
@@ -866,7 +924,6 @@
                             </div>
                         </div>
 
-                        <!-- Visual Grafik Batang (Bar Chart) -->
                         <div class="chart-container">
                             <div class="chart-header">
                                 <div class="chart-title"><i class="fas fa-chart-line text-primary"></i> Grafik Pertumbuhan Omzet & Performa Usaha</div>
@@ -945,38 +1002,38 @@
             <div class="grid-3">
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-globe"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Website & Toko Online UMKM</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Website resmi untuk profil bisnis, katalog produk lengkap, tombol order via WhatsApp, dan integrasi Google Maps.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Website & Toko Online UMKM</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Website resmi untuk profil bisnis, katalog produk lengkap, tombol order via WhatsApp, dan integrasi Google Maps.</p>
                 </div>
 
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-user-check"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Sistem Presensi Karyawan (GPS)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Aplikasi absensi HP pakai foto selfie & koordinat lokasi. Rekap laporan bulanan otomatis format Excel tanpa rekap manual.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Sistem Presensi Karyawan (GPS)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Aplikasi absensi HP pakai foto selfie & koordinat lokasi. Rekap laporan bulanan otomatis format Excel tanpa rekap manual.</p>
                 </div>
 
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-cash-register"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Aplikasi Kasir / POS Sederhana</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Pencatatan transaksi penjualan harian, cetak struk via bluetooth thermal printer, serta kontrol stok barang toko.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Aplikasi Kasir / POS Sederhana</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Pencatatan transaksi penjualan harian, cetak struk via bluetooth thermal printer, serta kontrol stok barang toko.</p>
                 </div>
 
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-qrcode"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Menu Digital / Brosur QR Code</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Sangat cocok untuk Resto, Kafe, dan Salon. Pelanggan tinggal scan QR Code di meja untuk melihat daftar menu interaktif.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Menu Digital / Brosur QR Code</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Sangat cocok untuk Resto, Kafe, dan Salon. Pelanggan tinggal scan QR Code di meja untuk melihat daftar menu interaktif.</p>
                 </div>
 
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Sistem Booking & Janji Temu</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Cocok untuk jasa barbershop, klinik, bengkel, dan persewaan. Memudahkan pelanggan mengatur jadwal kunjungan.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Sistem Booking & Janji Temu</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Cocok untuk jasa barbershop, klinik, bengkel, dan persewaan. Memudahkan pelanggan mengatur jadwal kunjungan.</p>
                 </div>
 
                 <div class="custom-card custom-card-hover reveal">
                     <div class="icon-box"><i class="fas fa-gears"></i></div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Pembuatan Website Untuk Bisnis</h3>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Punya alur bisnis unik? Kami siap mendesain sistem internal sesuai dengan alur operasional khusus usaha Anda.</p>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem;">Pembuatan Website Untuk Bisnis</h3>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Punya alur bisnis unik? Kami siap mendesain sistem internal sesuai dengan alur operasional khusus usaha Anda.</p>
                 </div>
             </div>
         </div>
@@ -992,21 +1049,21 @@
 
             <div class="grid-3">
                 <div class="custom-card reveal">
-                    <i class="fas fa-feather-pointed text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
-                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Sangat Mudah Digunakan</h4>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Tampilan ringkas tanpa kerumitan teknis. Anda atau staf dapat langsung memakainya dalam hitungan menit.</p>
+                    <div class="icon-box" style="margin-bottom: 0.8rem;"><i class="fas fa-feather-pointed text-primary"></i></div>
+                    <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem;">Sangat Mudah Digunakan</h4>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Tampilan ringkas tanpa kerumitan teknis. Anda atau staf dapat langsung memakainya dalam hitungan menit.</p>
                 </div>
 
                 <div class="custom-card reveal">
-                    <i class="fas fa-mobile-screen text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
-                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Ramah HP / Smartphone</h4>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Dapat diakses lancar lewat HP Android, iPhone, Laptop, maupun Tablet tanpa perlu beli perangkat mahal.</p>
+                    <div class="icon-box" style="margin-bottom: 0.8rem;"><i class="fas fa-mobile-screen text-primary"></i></div>
+                    <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem;">Ramah HP / Smartphone</h4>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Dapat diakses lancar lewat HP Android, iPhone, Laptop, maupun Tablet tanpa perlu beli perangkat mahal.</p>
                 </div>
 
                 <div class="custom-card reveal">
-                    <i class="fas fa-hand-holding-dollar text-primary" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
-                    <h4 style="font-weight: 700; margin-bottom: 0.4rem;">Tanpa Biaya Tersembunyi</h4>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Harga jelas dari awal. Bebas konsultasi dan termasuk garansi pendampingan dari tim teknis kami.</p>
+                    <div class="icon-box" style="margin-bottom: 0.8rem;"><i class="fas fa-hand-holding-dollar text-primary"></i></div>
+                    <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem;">Tanpa Biaya Tersembunyi</h4>
+                    <p style="color: var(--text-muted); font-size: 0.8rem;">Harga jelas dari awal. Bebas konsultasi dan termasuk garansi pendampingan dari tim teknis kami.</p>
                 </div>
             </div>
         </div>
@@ -1027,8 +1084,8 @@
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-category">Kuliner & Resto</span>
-                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">Web Menu QR & Presensi Karyawan</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Sistem terpadu untuk jaringan rumah makan daerah dengan 20+ staf.</p>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem;">Web Menu QR & Presensi Karyawan</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem;">Sistem terpadu untuk jaringan rumah makan daerah dengan 20+ staf.</p>
                     </div>
                 </div>
 
@@ -1038,8 +1095,8 @@
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-category">Toko Retail</span>
-                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">Website Katalog & Kasir Whatsapp</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Toko kelontong modern dengan fitur checkout langsung terhubung ke Chat WA.</p>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem;">Website Katalog & Kasir Whatsapp</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem;">Toko kelontong modern dengan fitur checkout langsung terhubung ke Chat WA.</p>
                     </div>
                 </div>
 
@@ -1049,8 +1106,8 @@
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-category">Jasa Layanan</span>
-                        <h3 style="font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem;">System Booking Barbershop / Salon</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">Aplikasi penjadwalan capster dan pencatatan komisi bulanan otomatis.</p>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem;">System Booking Barbershop / Salon</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem;">Aplikasi penjadwalan capster dan pencatatan komisi bulanan otomatis.</p>
                     </div>
                 </div>
             </div>
@@ -1066,11 +1123,10 @@
             </div>
 
             <div class="grid-3">
-                <!-- Website Starter -->
                 <div class="custom-card pricing-card custom-card-hover reveal">
                     <div>
-                        <h3 style="font-size: 1.1rem; font-weight: 700;">Website Profil UMKM</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Cocok untuk usaha baru agar tampil terpercaya.</p>
+                        <h3 style="font-size: 1rem; font-weight: 700;">Website Profil UMKM</h3>
+                        <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 0.15rem;">Cocok untuk usaha baru agar tampil terpercaya.</p>
                         <div class="price">Rp 750.000 <span>/ sekali bayar</span></div>
                         <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Domain .com / .my.id (1 Thn)</li>
@@ -1080,15 +1136,14 @@
                             <li><i class="fas fa-check"></i> Gratis Pemanduan Admin</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Website%20Profil%20UMKM." target="_blank" class="btn btn-secondary btn-block">Pilih Paket</a>
+                    <a href="https://wa.me/6285177137899?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Website%20Profil%20UMKM." target="_blank" class="btn btn-secondary btn-block">Pilih Paket</a>
                 </div>
 
-                <!-- Sistem Presensi & Website (Popular) -->
                 <div class="custom-card pricing-card pricing-popular custom-card-hover reveal">
                     <span class="popular-badge">Paling Banyak Dipilih</span>
                     <div>
-                        <h3 style="font-size: 1.1rem; font-weight: 700;">Presensi + Website Pro</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Solusi operasional dan promosi lengkap.</p>
+                        <h3 style="font-size: 1rem; font-weight: 700;">Presensi + Website Pro</h3>
+                        <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 0.15rem;">Solusi operasional dan promosi lengkap.</p>
                         <div class="price">Rp 1.850.000 <span>/ sistem usaha</span></div>
                         <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Fitur Website UMKM Lengkap</li>
@@ -1098,14 +1153,13 @@
                             <li><i class="fas fa-check"></i> Pendampingan & Garansi 6 Bulan</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Presensi%20+%20Website%20Pro." target="_blank" class="btn btn-primary btn-block">Pilih Paket</a>
+                    <a href="https://wa.me/6285177137899?text=Halo%20Sitenexs,%20saya%20tertarik%20Paket%20Presensi%20+%20Website%20Pro." target="_blank" class="btn btn-primary btn-block">Pilih Paket</a>
                 </div>
 
-                <!-- Custom Enterprise -->
                 <div class="custom-card pricing-card custom-card-hover reveal">
                     <div>
-                        <h3 style="font-size: 1.1rem; font-weight: 700;">Sistem Kasir / Custom</h3>
-                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.2rem;">Untuk toko retail, resto, & multi-cabang.</p>
+                        <h3 style="font-size: 1rem; font-weight: 700;">Sistem Kasir / Custom</h3>
+                        <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 0.15rem;">Untuk toko retail, resto, & multi-cabang.</p>
                         <div class="price">Konsultasi <span>/ penyesuaian</span></div>
                         <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Software Kasir POS / Stok Barang</li>
@@ -1115,7 +1169,7 @@
                             <li><i class="fas fa-check"></i> Support Teknis Prioritas</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20ingin%20konsultasi%20Sistem%20Custom/Kasir." target="_blank" class="btn btn-secondary btn-block">Hubungi Kami</a>
+                    <a href="https://wa.me/6285177137899?text=Halo%20Sitenexs,%20saya%20ingin%20konsultasi%20Sistem%20Custom/Kasir." target="_blank" class="btn btn-secondary btn-block">Hubungi Kami</a>
                 </div>
             </div>
         </div>
@@ -1181,7 +1235,7 @@
                         </div>
                         <div class="form-group">
                             <label>No. WhatsApp</label>
-                            <input type="tel" required placeholder="0812xxxxxxx" class="form-control">
+                            <input type="tel" required placeholder="085177137899" class="form-control">
                         </div>
                     </div>
 
@@ -1201,7 +1255,7 @@
                         <textarea rows="3" placeholder="Ceritakan singkat jenis usaha Anda dan sistem yang diinginkan..." class="form-control"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Kirim Pesan Konsultasi</button>
+                    <button type="submit" class="btn btn-primary btn-block" style="border-radius: var(--radius-full);">Kirim Pesan Konsultasi</button>
                 </form>
             </div>
         </div>
@@ -1212,11 +1266,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo" style="margin-bottom: 0.75rem;">
+                    <div class="logo" style="margin-bottom: 0.5rem;">
                         <img src="logo.png" alt="Sitenexs Logo" class="logo-img" onerror="this.style.display='none'">
                         <span class="logo-text">Sitenexs</span>
                     </div>
-                    <p style="font-size: 0.8rem; line-height: 1.5; max-width: 280px;">Partner digitalisasi UMKM Indonesia. Solusi software praktis, terjangkau, dan mudah dipakai.</p>
+                    <p style="font-size: 0.78rem; line-height: 1.4; max-width: 260px;">Partner digitalisasi UMKM Indonesia. Solusi software praktis, terjangkau, dan mudah dipakai.</p>
                 </div>
                 <div>
                     <div class="footer-title">Layanan</div>
@@ -1232,33 +1286,35 @@
                     <div class="social-icons">
                         <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6285177137899" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
                     <div class="footer-title">Kontak Kami</div>
-                    <p style="font-size: 0.8rem;"><i class="fas fa-envelope"></i> halo@sitenexs.com</p>
-                    <p style="font-size: 0.8rem; margin-top: 0.3rem;"><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                    <p style="font-size: 0.78rem;"><i class="fas fa-envelope"></i> halo@sitenexs.com</p>
+                    <p style="font-size: 0.78rem; margin-top: 0.2rem;"><i class="fas fa-phone"></i> +62 851-7713-7899</p>
                 </div>
             </div>
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; text-align: center; font-size: 0.75rem;">
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; text-align: center; font-size: 0.72rem;">
                 &copy; 2026 Sitenexs. Solusi Digital UMKM Indonesia.
             </div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6281234567890?text=Halo%20Sitenexs,%20saya%20ingin%20tanya%20seputar%20pembuatan%20website%20dan%20sistem%20presensi." 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Chat WhatsApp"
-       class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- FLOATING WHATSAPP BUTTON (DIPERBAIKI AGAR LEBIH NYATA & HIDUP) -->
+    <div class="whatsapp-float-container">
+        <div class="whatsapp-tooltip">Butuh bantuan? Chat kami 👋</div>
+        <a href="https://wa.me/6285177137899?text=Halo%20Sitenexs,%20saya%20ingin%20tanya%20seputar%20pembuatan%20website%20dan%20sistem%20presensi." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Chat WhatsApp"
+           class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script>
-        // 1. Mobile Navigation Toggle & Auto-Close when Link Clicked
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileNavItems = document.querySelectorAll('#mobile-menu a');
@@ -1274,7 +1330,6 @@
             });
         });
 
-        // 2. Scroll Reveal Effect
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal');
             const windowHeight = window.innerHeight;
@@ -1288,7 +1343,6 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // 3. Counter Animation
         let countersStarted = false;
         function startCounters() {
             const counters = document.querySelectorAll('.counter');
@@ -1321,7 +1375,6 @@
             }
         });
 
-        // 4. FAQ Accordion
         const faqBtns = document.querySelectorAll('.faq-btn');
         faqBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1335,7 +1388,6 @@
             });
         });
 
-        // 5. Form Kontak Handling
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Terima kasih! Tim Sitenexs akan menghubungi nomor WhatsApp Anda dalam waktu dekat.');
